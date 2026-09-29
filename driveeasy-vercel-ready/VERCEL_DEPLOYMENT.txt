@@ -1,0 +1,19 @@
+DriveEasy - Vercel deployment
+
+This package preserves the original DriveEasy pages and styling.
+A public/ folder was added so Vite copies the existing multi-page site
+into dist/ during `npm run build`. The existing index.html still redirects
+to /views/index.html.
+
+Vercel settings:
+- Framework/Preset: Vite
+- Root Directory: if this ZIP is uploaded directly, use the project root (.)
+- Build Command: npm run build
+- Output Directory: dist
+- Install Command: npm install --legacy-peer-deps
+
+Important:
+The original project contains server.ts and db.json. This package fixes the
+frontend/static deployment structure, but the local Express server is not a
+persistent Vercel server. API persistence may require a separate backend or
+database deployment.
